@@ -13,6 +13,13 @@
     getRandomQuote: function () {
       var randomIndex = Math.floor(Math.random() * this.quotes.length)
       return this.quotes[randomIndex]
+    },
+    generateRandomQuotes: function(delay, callback) {
+      var self = this
+      callback(this.getRandomQuote())
+      setTimeout(function() {
+        callback(self.getRandomQuote())
+      }, delay)
     }
   })
 
@@ -33,7 +40,10 @@
     constructor: [
       QuoteService,
       function RandomQuoteComponent(quoteService) {
-        this.quote = quoteService.getRandomQuote()
+        var self = this
+        quoteService.generateRandomQuotes(2000, function(quote) {
+          self.quote = quote
+        })
       }
     ]
   })
