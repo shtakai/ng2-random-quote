@@ -9,7 +9,7 @@
   }).Class({
     constructor: [ShowTimeService, function ShowTimeComponent(showTimeService) {
       var self = this
-      showTimeService.updateTime(1000, function(quote) {
+      showTimeService.updateTime(1000, function() {
         self.now = showTimeService.now
       })
     }]
