@@ -3,12 +3,15 @@
   var BrowserModule = ng.platformBrowser.BrowserModule
   var QuoteService = app.QuoteService
   var RandomQuoteComponent = app.RandomQuoteComponent
+  var ShowTimeService = app.ShowTimeService
+  var ShowTimeComponent = app.ShowTimeComponent
   var AppComponent = app.AppComponent
+
 
   app.AppModule = NgModule({
     imports: [BrowserModule],
-    declarations: [AppComponent, RandomQuoteComponent],
-    providers: [QuoteService],
+    declarations: [AppComponent, RandomQuoteComponent, ShowTimeComponent],
+    providers: [QuoteService, ShowTimeService],
     bootstrap: [AppComponent]
   })
   .Class({
