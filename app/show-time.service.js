@@ -11,7 +11,7 @@
     },
     updateTime: function(delay, callback) {
       var self = this
-      setTimeout(function() {
+      setInterval(function() {
         callback(self.setTime())
       }, delay)
     }
